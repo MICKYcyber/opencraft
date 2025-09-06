@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
+    <title>Game</title>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            // Open a new tab with the current page content
+            const newWindow = window.open('about:blank', '_blank');
+            
+            if (newWindow) {
+                // Write the current page's HTML into the new tab
+                newWindow.document.write(document.documentElement.outerHTML);
+                newWindow.document.close();
+                
+                // Close the original tab
+                window.close();
+            }
+        });
+    </script>
+
+  <head>
     <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite App</title>
   </head>
   <body>
     <div id="app"></div>
